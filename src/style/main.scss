@@ -30,3 +30,15 @@ body {
 @import "navbar.scss";
 @import "images.scss";
 @import "calendar.scss";
+
+.carousel {
+  .thumbs-wrapper {
+    display: none;
+  }
+}
+
+.carousel .control-dots .dot.selected,
+.carousel .control-dots .dot:hover,
+.carousel-status {
+  opacity: 0;
+}

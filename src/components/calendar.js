@@ -6,6 +6,7 @@ import PopPop from "react-poppop";
 export function CalendarJS() {
   const [value, onChange] = useState(new Date());
   const [showPop, setShowPop] = useState(false);
+  const [booked, setBooked] = useState("available");
 
   return (
     <div>
@@ -27,7 +28,7 @@ export function CalendarJS() {
       >
         <h1>{value.toDateString()}</h1>
         <p>
-          content
+          {booked === "available" ? booked : <div>This is booked</div>}
           {/* server info about booking */}
         </p>
       </PopPop>

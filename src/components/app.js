@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar/navbar";
+import ImgCarousel from "./carousel/img-carousel";
 
 export default class App extends Component {
   render() {
@@ -8,7 +9,8 @@ export default class App extends Component {
         <h1>My Photography Company</h1>
         <Navbar />
         <h2>React Redux Router</h2>
-        <img className="photo_placeholder" />
+        {/* <img className="photo_placeholder" /> */}
+        <ImgCarousel />
       </div>
     );
   }
