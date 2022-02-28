@@ -1,16 +1,33 @@
 import React, { Component } from "react";
-import Navbar from "./Navbar/navbar";
-import ImgCarousel from "./carousel/img-carousel";
+import NavigationContainer from "./Navbar/navbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./pages/home";
+import About from "./pages/about";
+import Contact from "./pages/contact";
+import NoMatch from "./pages/no-match";
 
 export default class App extends Component {
   render() {
     return (
+      // render() {
+      // return (
       <div className="app">
-        <h1>My Photography Company</h1>
-        <Navbar />
-        <h2>React Redux Router</h2>
-        {/* <img className="photo_placeholder" /> */}
-        <ImgCarousel />
+        {/* <Navbar /> */}
+        <div className="container">
+          <Router>
+            <div>
+              <NavigationContainer />
+
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/about-me" component={About} />
+                <Route path="/contact" component={Contact} />
+
+                <Route component={NoMatch} />
+              </Switch>
+            </div>
+          </Router>
+        </div>
       </div>
     );
   }

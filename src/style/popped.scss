@@ -1,0 +1,43 @@
+.popper-btn {
+  bottom: 15px;
+  position: absolute;
+}
+
+.poppop {
+  padding: 50px;
+  .date-to-string {
+    margin: 25px;
+  }
+  .popper-btns-wrapper {
+    .morning {
+      margin: 15px;
+      left: 15px;
+    }
+    .afternoon {
+      margin: 15px;
+      right: 15px;
+    }
+  }
+}
+
+.usr-contact {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    margin: 7px;
+    padding: 3px;
+  }
+
+  .pop-btns {
+    button {
+      display: flex;
+    }
+    .pop-back-btn {
+      left: 15px;
+    }
+    .pop-submit-btn {
+      right: 15px;
+    }
+  }
+}

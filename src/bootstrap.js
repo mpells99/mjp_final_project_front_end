@@ -10,14 +10,13 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 import "./style/main.scss";
 // import CalendarSchedule from "./components/schedule";
-import { CalendarJS } from "./components/calendar";
+import { CalendarJS } from "./components/calendar/calendar.js";
 
 function main() {
   ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
       <BrowserRouter>
         <App />
-        <CalendarJS />
       </BrowserRouter>
     </Provider>,
     document.querySelector(".app-wrapper")

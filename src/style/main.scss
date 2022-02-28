@@ -19,6 +19,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   -webkit-tap-highlight-color: transparent;
+  background-color: #e8e4db;
+}
+
+button {
+  background-color: #c9c1ae;
+  border-color: #9ba17f;
 }
 
 .app {
@@ -30,15 +36,6 @@ body {
 @import "navbar.scss";
 @import "images.scss";
 @import "calendar.scss";
-
-.carousel {
-  .thumbs-wrapper {
-    display: none;
-  }
-}
-
-.carousel .control-dots .dot.selected,
-.carousel .control-dots .dot:hover,
-.carousel-status {
-  opacity: 0;
-}
+@import "layouts.scss";
+@import "carousel.scss";
+@import "popped.scss";

@@ -1,7 +1,24 @@
+h1,
+h2,
+abbr,
+button {
+  color: darkolivegreen;
+}
+
 .navbar {
-  display: flex;
-  width: 100vw;
-  justify-content: space-evenly;
+  h1 {
+    display: flex;
+    justify-content: center;
+    padding: 5px 0px 10px 0px;
+  }
+  .nav-wrapper {
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    padding: 5px 0px 10px 0px;
+  }
+  font-size: 1.5em;
+
   .navbar-item {
     color: magenta;
   }
