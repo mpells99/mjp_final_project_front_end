@@ -11,12 +11,34 @@ export function CalendarJS() {
   const [calBtn, setcalBtn] = useState("");
   const [poppedClick, setPoppedClick] = useState(true);
 
+  function backed() {
+    setPoppedClick(true);
+  }
+
+  // async function funcky() {
+  //   // let docuFuncky = JSON.stringify(
+
+  //   console.log(
+  //     "docu" +
+  //       (await document.querySelector(
+  //         "body > div:nth-child(5) > div > div:nth-child(2)"
+  //       ))
+  //   );
+  // }
+
+  // function popColor() {
+  //   (document.querySelector(
+  //     "body > div:nth-child(5) > div > div:nth-child(2)"
+  //   ).className += "pop-color");
+  // }
+
   return (
     <div>
       <Calendar
         onChange={(value) => {
           onChange(value);
           setShowPop(true);
+
           // console.log("You clicked on: " + value);
         }}
         value={value}
@@ -45,6 +67,13 @@ export function CalendarJS() {
                 }}
                 value="9 AM - 12 PM"
               ></input>
+              {/* {showPop ? (
+                (document.querySelectorAll(
+                  "body > div:nth-child(5) > div > div:nth-child(2)"
+                )[0].className += "pop-color")
+              ) : (
+                <div className="blue"></div>
+              )} */}
               <input
                 type="button"
                 className="afternoon popper-btn"
@@ -60,7 +89,7 @@ export function CalendarJS() {
               </input>
             </div>
           ) : (
-            <Popped pCalDateID={calBtn} />
+            <Popped pCalDateID={calBtn} goBack={backed} />
           )}
         </div>
       </PopPop>

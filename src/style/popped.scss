@@ -3,6 +3,10 @@
   position: absolute;
 }
 
+body > div:nth-child(5) > div > div:nth-child(2) {
+  background-color: #e8e4db;
+}
+
 .poppop {
   padding: 50px;
   .date-to-string {
