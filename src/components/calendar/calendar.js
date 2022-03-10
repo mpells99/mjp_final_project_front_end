@@ -10,27 +10,13 @@ export function CalendarJS() {
   const [showPop, setShowPop] = useState(false);
   const [calBtn, setcalBtn] = useState("");
   const [poppedClick, setPoppedClick] = useState(true);
+  const blockedDate = new Date();
+
+  // const [disabler, setDisabler] = useState([])
 
   function backed() {
     setPoppedClick(true);
   }
-
-  // async function funcky() {
-  //   // let docuFuncky = JSON.stringify(
-
-  //   console.log(
-  //     "docu" +
-  //       (await document.querySelector(
-  //         "body > div:nth-child(5) > div > div:nth-child(2)"
-  //       ))
-  //   );
-  // }
-
-  // function popColor() {
-  //   (document.querySelector(
-  //     "body > div:nth-child(5) > div > div:nth-child(2)"
-  //   ).className += "pop-color");
-  // }
 
   return (
     <div>
@@ -38,10 +24,9 @@ export function CalendarJS() {
         onChange={(value) => {
           onChange(value);
           setShowPop(true);
-
-          // console.log("You clicked on: " + value);
         }}
         value={value}
+        minDate={blockedDate}
       />
       <PopPop
         position="centerCenter"
@@ -67,13 +52,6 @@ export function CalendarJS() {
                 }}
                 value="9 AM - 12 PM"
               ></input>
-              {/* {showPop ? (
-                (document.querySelectorAll(
-                  "body > div:nth-child(5) > div > div:nth-child(2)"
-                )[0].className += "pop-color")
-              ) : (
-                <div className="blue"></div>
-              )} */}
               <input
                 type="button"
                 className="afternoon popper-btn"

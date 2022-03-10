@@ -77,3 +77,16 @@
     }
   }
 }
+
+.react-calendar
+  .react-calendar__viewContainer
+  .react-calendar__month-view
+  .react-calendar__month-view__days__day,
+.react-calendar
+  .react-calendar__viewContainer
+  .react-calendar__month-view
+  .react-calendar__tile {
+  padding: 1px;
+  height: 95px;
+  margin: 1px;
+}

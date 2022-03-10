@@ -1,25 +1,25 @@
 .popper-btn {
   bottom: 15px;
+  border-radius: 5px;
+  padding: 5px;
   position: absolute;
 }
 
-body > div:nth-child(5) > div > div:nth-child(2) {
-  background-color: #e8e4db;
-}
+// body > div:nth-child(5) > div > div:nth-child(2) {
+//   background-color: #e8e4db;
+// }
 
 .poppop {
-  padding: 50px;
+  padding: 0px 0px 50px 0px;
   .date-to-string {
     margin: 25px;
   }
 }
 .popper-btns-wrapper {
   .morning {
-    margin: 15px;
     left: 15px;
   }
   .afternoon {
-    margin: 15px;
     right: 15px;
   }
 }
@@ -30,7 +30,8 @@ body > div:nth-child(5) > div > div:nth-child(2) {
     flex-direction: column;
     input {
       margin: 7px;
-      padding: 3px;
+      padding: 5px;
+      border-radius: 5px;
     }
   }
 
