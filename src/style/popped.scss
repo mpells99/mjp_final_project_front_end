@@ -12,25 +12,26 @@ body > div:nth-child(5) > div > div:nth-child(2) {
   .date-to-string {
     margin: 25px;
   }
-  .popper-btns-wrapper {
-    .morning {
-      margin: 15px;
-      left: 15px;
-    }
-    .afternoon {
-      margin: 15px;
-      right: 15px;
-    }
+}
+.popper-btns-wrapper {
+  .morning {
+    margin: 15px;
+    left: 15px;
+  }
+  .afternoon {
+    margin: 15px;
+    right: 15px;
   }
 }
 
 .usr-contact {
-  display: flex;
-  flex-direction: column;
-
-  input {
-    margin: 7px;
-    padding: 3px;
+  div {
+    display: flex;
+    flex-direction: column;
+    input {
+      margin: 7px;
+      padding: 3px;
+    }
   }
 
   .pop-btns {

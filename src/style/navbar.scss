@@ -23,3 +23,24 @@ button {
     color: magenta;
   }
 }
+
+@media only screen and (max-width: 749px) {
+  .navbar {
+    h1 {
+      display: flex;
+      justify-content: center;
+      padding: 5px 0px 10px 0px;
+    }
+    .nav-wrapper {
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+      padding: 5px 0px 10px 0px;
+    }
+    font-size: 1.5em;
+
+    .navbar-item {
+      color: magenta;
+    }
+  }
+}

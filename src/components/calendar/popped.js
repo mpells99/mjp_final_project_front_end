@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import PoppedForm from "./popped-form";
 
 export default function Popped(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+
+  // TODO: Change Class for POPPOP
+  //   document.querySelector("body > div:nth-child(5) > div > div:nth-child(2)").className += "pop-color"
 
   async function usrFunc() {
     return console.log(name, email, phone, address);
@@ -22,37 +26,15 @@ export default function Popped(props) {
         </div>
       )}
       <form className="usr-contact">
-        <input
-          id="name"
-          placeholder="Name"
-          value={name}
-          onChange={({ target }) => {
-            setName(target.value);
-          }}
-        />
-        <input
-          id="email"
-          placeholder="Email"
-          value={email}
-          onChange={({ target }) => {
-            setEmail(target.value);
-          }}
-        />
-        <input
-          id="phone"
-          placeholder="Phone"
-          value={phone}
-          onChange={({ target }) => {
-            setPhone(target.value);
-          }}
-        />
-        <input
-          id="address"
-          placeholder="Address"
-          value={address}
-          onChange={({ target }) => {
-            setAddress(target.value);
-          }}
+        <PoppedForm
+          name={name}
+          email={email}
+          phone={phone}
+          address={address}
+          setName={setName}
+          setEmail={setEmail}
+          setPhone={setPhone}
+          setAddress={setAddress}
         />
         <div className="pop-btns">
           <input
