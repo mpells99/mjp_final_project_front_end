@@ -1,7 +1,6 @@
 import React, { Component, useState } from "react";
 import Calendar from "react-calendar";
 import PopPop from "react-poppop";
-import CalendarBackEnd from "./calendar-backEnd";
 import dateFormat from "dateformat";
 import Popped from "./popped";
 
@@ -11,11 +10,38 @@ export function CalendarJS() {
   const [calBtn, setcalBtn] = useState("");
   const [poppedClick, setPoppedClick] = useState(true);
   const blockedDate = new Date();
+  const [disabledAM, setDisabledAM] = useState(false);
+  const [disabledPM, setDisabledPM] = useState(false);
 
   // const [disabler, setDisabler] = useState([])
 
   function backed() {
     setPoppedClick(true);
+  }
+
+  function AMPM(FECalDateID, boolSetter) {
+    fetch(`http://localhost:5000/calendarInfo/${FECalDateID}`, {
+      method: "GET",
+    })
+      .then((response) => {
+        const text = response.text();
+        if (response.ok) {
+          return text;
+        } else {
+          throw Error(text);
+        }
+      })
+      .then((text) => {
+        const calPars = JSON.parse(text);
+        if ("booked" === calPars.booked) {
+          boolSetter(true);
+        } else {
+          boolSetter(false);
+        }
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   }
 
   return (
@@ -24,6 +50,8 @@ export function CalendarJS() {
         onChange={(value) => {
           onChange(value);
           setShowPop(true);
+          AMPM(dateFormat(value, "yyyymmdd") + "01", setDisabledAM);
+          AMPM(dateFormat(value, "yyyymmdd") + "02", setDisabledPM);
         }}
         value={value}
         minDate={blockedDate}
@@ -36,6 +64,8 @@ export function CalendarJS() {
         onClose={() => {
           setShowPop(false);
           setPoppedClick(true);
+          setDisabledAM(false);
+          setDisabledPM(false);
         }}
         closeOnOverlay={true}
       >
@@ -50,8 +80,12 @@ export function CalendarJS() {
                   setPoppedClick(false);
                   setcalBtn("1");
                 }}
+                disabled={disabledAM}
                 value="9 AM - 12 PM"
               ></input>
+              {/* <CalendarBackEnd
+                FECalDateID={dateFormat(value, "yyyymmdd") + "01"}
+              /> */}
               <input
                 type="button"
                 className="afternoon popper-btn"
@@ -59,12 +93,12 @@ export function CalendarJS() {
                   setPoppedClick(false);
                   setcalBtn("2");
                 }}
+                disabled={disabledPM}
                 value="1 PM - 4 PM"
-              >
-                {/* <CalendarBackEnd
-                  FECalDateID={dateFormat(value, "yyyymmdd") + "02"}
-                /> */}
-              </input>
+              ></input>
+              {/* <CalendarBackEnd
+                FECalDateID={dateFormat(value, "yyyymmdd") + "02"}
+              /> */}
             </div>
           ) : (
             <Popped pCalDateID={calBtn} goBack={backed} />

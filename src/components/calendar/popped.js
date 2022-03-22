@@ -7,9 +7,6 @@ export default function Popped(props) {
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
 
-  // TODO: Change Class for POPPOP
-  //   document.querySelector("body > div:nth-child(5) > div > div:nth-child(2)").className += "pop-color"
-
   async function usrFunc() {
     return console.log(name, email, phone, address);
   }
