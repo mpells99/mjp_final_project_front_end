@@ -56,3 +56,24 @@
     }
   }
 }
+
+@media only screen and (max-width: 749px) {
+  .poppop {
+    width: 60vw;
+    height: 60vh;
+    max-height: 320px;
+  }
+  .popper-btn {
+    position: inherit;
+    padding: 10px;
+    margin: 10px;
+  }
+  .popper-btns-wrapper {
+    display: flex;
+    flex-direction: column;
+    .morning {
+    }
+    .afternoon {
+    }
+  }
+}
