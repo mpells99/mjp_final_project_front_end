@@ -51,7 +51,6 @@
 
       .react-calendar__month-view__days__day {
         max-width: 108px !important;
-        // background-color: purple;
       }
     }
   }
@@ -70,9 +69,10 @@
       }
 
       .react-calendar__month-view__days__day {
-        padding: 2px;
+        padding: 0px !important;
         height: 50px !important;
-        // background-color: blue;
+        width: 108px !important;
+        flex-basis: 110px !important;
       }
     }
   }

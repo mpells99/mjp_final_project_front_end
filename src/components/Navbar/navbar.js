@@ -7,8 +7,11 @@ import { NavLink } from "react-router-dom";
 const NavigationComponent = () => {
   return (
     <div className="navbar">
-      <h1>My Photography Company</h1>
-
+      <div className="title">
+        <h1>
+          My <span>Photography</span> Company
+        </h1>
+      </div>
       <div className="nav-wrapper">
         <div className="nav-link-wrapper">
           <NavLink exact to="/" activeClassName="nav-link-active">
