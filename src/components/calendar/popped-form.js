@@ -29,7 +29,7 @@ export default function PoppedForm(props) {
       />
       <input
         id="address"
-        placeholder="Address"
+        placeholder="Location of Shoot"
         value={props.address}
         onChange={({ target }) => {
           props.setAddress(target.value);

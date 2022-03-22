@@ -12,6 +12,7 @@ export function CalendarJS() {
   const blockedDate = new Date();
   const [disabledAM, setDisabledAM] = useState(false);
   const [disabledPM, setDisabledPM] = useState(false);
+  const [calDateOptions, setCalDateOptions] = useState("");
 
   // const [disabler, setDisabler] = useState([])
 
@@ -79,29 +80,31 @@ export function CalendarJS() {
                 onClick={() => {
                   setPoppedClick(false);
                   setcalBtn("1");
+                  setCalDateOptions("9 AM - 12 PM");
                 }}
                 disabled={disabledAM}
                 value="9 AM - 12 PM"
               ></input>
-              {/* <CalendarBackEnd
-                FECalDateID={dateFormat(value, "yyyymmdd") + "01"}
-              /> */}
               <input
                 type="button"
                 className="afternoon popper-btn"
                 onClick={() => {
                   setPoppedClick(false);
                   setcalBtn("2");
+                  setCalDateOptions("1 PM - 4 PM");
                 }}
                 disabled={disabledPM}
                 value="1 PM - 4 PM"
               ></input>
-              {/* <CalendarBackEnd
-                FECalDateID={dateFormat(value, "yyyymmdd") + "02"}
-              /> */}
             </div>
           ) : (
-            <Popped pCalDateID={calBtn} goBack={backed} />
+            <Popped
+              calBtn={calBtn}
+              calDate={value.toDateString()}
+              calDateOptions={calDateOptions}
+              calDateID={dateFormat(value, "yyyymmdd") + "0" + calBtn}
+              goBack={backed}
+            />
           )}
         </div>
       </PopPop>
