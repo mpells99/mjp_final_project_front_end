@@ -22,8 +22,6 @@
           justify-content: center;
           display: flex;
           margin: 10px 4px;
-          max-width: 108px !important;
-          min-width: 108px !important;
         }
       }
 
@@ -46,6 +44,8 @@
           display: flex;
           margin: 10px 0px;
           align-content: space-between;
+          max-width: 108px !important;
+          min-width: 108px !important;
         }
       }
 
@@ -57,26 +57,36 @@
 }
 
 @media only screen and (max-width: 749px) {
+  .react-calendar {
+    width: 100vw;
+    margin-left: 0px;
+    .react-calendar__viewContainer {
+      width: 100vw;
+    }
+  }
   .react-calendar__viewContainer {
-    width: fit-content;
+    // width: fit-content;
     .react-calendar__month-view {
       .react-calendar__month-view__weekdays {
         .react-calendar__month-view__weekdays__weekday {
           justify-content: center;
           display: flex;
           margin: 10px 0px;
+          max-width: 12.5% !important;
         }
-      }
-
-      .react-calendar__month-view__days__day {
-        padding: 0px !important;
-        height: 50px !important;
-        width: 108px !important;
-        flex-basis: 110px !important;
       }
     }
   }
+
+  .react-calendar__month-view__days__day {
+    padding: 0px !important;
+    height: 50px !important;
+    width: 108px !important;
+    flex-basis: 110px !important;
+    max-width: 12.5% !important;
+  }
 }
+// }
 
 .react-calendar
   .react-calendar__viewContainer
