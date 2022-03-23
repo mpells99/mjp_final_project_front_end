@@ -23,7 +23,7 @@ export default function Popped(props) {
       calDateOptions: props.calDateOptions,
       booked: "booked",
     };
-    fetch(`http://localhost:5000/calendar`, {
+    fetch(`https://mjs-capstone-project-backend.herokuapp.com/calendar`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",

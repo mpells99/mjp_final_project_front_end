@@ -21,9 +21,12 @@ export function CalendarJS() {
   }
 
   function AMPM(FECalDateID, boolSetter) {
-    fetch(`http://localhost:5000/calendarInfo/${FECalDateID}`, {
-      method: "GET",
-    })
+    fetch(
+      `https://mjs-capstone-project-backend.herokuapp.com/calendarInfo/${FECalDateID}`,
+      {
+        method: "GET",
+      }
+    )
       .then((response) => {
         const text = response.text();
         if (response.ok) {
