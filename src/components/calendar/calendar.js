@@ -47,6 +47,9 @@ export function CalendarJS() {
 
   return (
     <div>
+      <div className="calendar-note">
+        <h3>Please select the date and time for your photography session.</h3>
+      </div>
       <Calendar
         onChange={(value) => {
           onChange(value);
@@ -73,38 +76,45 @@ export function CalendarJS() {
         <div className="poppop">
           <h1 className="date-to-string">{value.toDateString()}</h1>
           {poppedClick ? (
-            <div className="popper-btns-wrapper">
-              <input
-                type="button"
-                className="morning popper-btn"
-                onClick={() => {
-                  setPoppedClick(false);
-                  setcalBtn("1");
-                  setCalDateOptions("9 AM - 12 PM");
-                }}
-                disabled={disabledAM}
-                value="9 AM - 12 PM"
-              ></input>
-              <input
-                type="button"
-                className="afternoon popper-btn"
-                onClick={() => {
-                  setPoppedClick(false);
-                  setcalBtn("2");
-                  setCalDateOptions("1 PM - 4 PM");
-                }}
-                disabled={disabledPM}
-                value="1 PM - 4 PM"
-              ></input>
+            <div>
+              <h3>Please select which time slot you want for this date.</h3>
+
+              <div className="popper-btns-wrapper">
+                <input
+                  type="button"
+                  className="morning popper-btn"
+                  onClick={() => {
+                    setPoppedClick(false);
+                    setcalBtn("1");
+                    setCalDateOptions("9 AM - 12 PM");
+                  }}
+                  disabled={disabledAM}
+                  value="9 AM - 12 PM"
+                ></input>
+                <input
+                  type="button"
+                  className="afternoon popper-btn"
+                  onClick={() => {
+                    setPoppedClick(false);
+                    setcalBtn("2");
+                    setCalDateOptions("1 PM - 4 PM");
+                  }}
+                  disabled={disabledPM}
+                  value="1 PM - 4 PM"
+                ></input>
+              </div>
             </div>
           ) : (
-            <Popped
-              calBtn={calBtn}
-              calDate={value.toDateString()}
-              calDateOptions={calDateOptions}
-              calDateID={dateFormat(value, "yyyymmdd") + "0" + calBtn}
-              goBack={backed}
-            />
+            <div>
+              <h3>Please fill out your information in the forms below.</h3>
+              <Popped
+                calBtn={calBtn}
+                calDate={value.toDateString()}
+                calDateOptions={calDateOptions}
+                calDateID={dateFormat(value, "yyyymmdd") + "0" + calBtn}
+                goBack={backed}
+              />
+            </div>
           )}
         </div>
       </PopPop>
