@@ -1,5 +1,5 @@
 {
-  "name": "react-redux-router",
+  "name": "mjs_final_project",
   "version": "1.0.0",
   "engines": {"node": "14.16.x"},
   "description": "Basic skeleton codebase for React/Redux/Router applications.",
