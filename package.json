@@ -2,7 +2,7 @@
   "name": "mjs_final_project",
   "version": "1.0.0",
   "engines": {"node": "14.16.x"},
-  "description": "Basic skeleton codebase for React/Redux/Router applications.",
+  "description": "Basic template for booking photography sessions.",
   "scripts": {
     "preinstall": "npm set audit false",
     "start": "webpack-dev-server --config webpack/dev.config.js --watch",
@@ -26,10 +26,10 @@
     "sass",
     "css module"
   ],
-  "author": "Your Name Here",
+  "author": "McDonald Pells",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bottega-code-school/js-builder/issues"
+    "url": "https://github.com/mpells99/mjp_final_project_front_end"
   },
   "homepage": "https://github.com/bottega-code-school/js-builder",
   "dependencies": {
