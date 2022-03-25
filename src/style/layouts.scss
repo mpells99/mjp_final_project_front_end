@@ -21,3 +21,19 @@
     }
   }
 }
+
+.admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .admin-view {
+    margin: 15px 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .session-scheduled {
+      font-size: 1.5rem;
+      padding: 50px 10px;
+    }
+  }
+}

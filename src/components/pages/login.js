@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import PopPop from "react-poppop";
+import AdminView from "./admin-view";
 
 export default function Login() {
   const [showPop, setShowPop] = useState(true);
   const [loggedInStatus, setLoggedInStatus] = useState(false);
   const [authAdminUser, setAuthAdminUser] = useState("");
   const [authAdminPsswrd, setAuthAdminPsswrd] = useState("");
+  const [loginError, setLoginError] = useState(false);
 
   function submitLogin() {
     checkLoginStatus();
@@ -16,8 +18,7 @@ export default function Login() {
       authAdminUser: authAdminUser,
       authAdminPsswrd: authAdminPsswrd,
     };
-    // fetch(`https://mjs-capstone-project-backend.herokuapp.com/auth`, {
-    fetch(`http://127.0.0.1:5000/auth`, {
+    fetch(`https://mjs-capstone-project-backend.herokuapp.com/auth`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
@@ -40,6 +41,7 @@ export default function Login() {
           setShowPop(false);
         } else {
           setLoggedInStatus(false);
+          setLoginError(true);
         }
       })
       .catch((error) => {
@@ -80,6 +82,11 @@ export default function Login() {
                   setAuthAdminPsswrd(target.value);
                 }}
               />
+              {loginError ? (
+                <div>
+                  You have entered incorrect credentials, please try again.
+                </div>
+              ) : null}
               <input
                 className="pop-submit-btn popper-btn"
                 type="button"
@@ -92,7 +99,11 @@ export default function Login() {
           </div>
         </div>
       </PopPop>
-      {loggedInStatus ? <div>true</div> : null}
+      {loggedInStatus ? (
+        <div>
+          <AdminView />
+        </div>
+      ) : null}
     </div>
   );
 }
