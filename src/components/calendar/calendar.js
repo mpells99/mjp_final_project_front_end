@@ -14,8 +14,6 @@ export function CalendarJS() {
   const [disabledPM, setDisabledPM] = useState(false);
   const [calDateOptions, setCalDateOptions] = useState("");
 
-  // const [disabler, setDisabler] = useState([])
-
   function backed() {
     setPoppedClick(true);
   }

@@ -5,14 +5,12 @@ import Home from "./pages/home";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import NoMatch from "./pages/no-match";
+import Login from "./pages/login";
 
 export default class App extends Component {
   render() {
     return (
-      // render() {
-      // return (
       <div className="app">
-        {/* <Navbar /> */}
         <div className="container">
           <Router>
             <div>
@@ -22,6 +20,7 @@ export default class App extends Component {
                 <Route exact path="/" component={Home} />
                 <Route path="/about-me" component={About} />
                 <Route path="/contact" component={Contact} />
+                <Route path="/login" component={Login} />
 
                 <Route component={NoMatch} />
               </Switch>

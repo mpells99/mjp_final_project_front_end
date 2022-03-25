@@ -9,7 +9,8 @@
 //   background-color: #e8e4db;
 // }
 
-.poppop {
+.poppop,
+.login-poppop {
   padding: 0px 0px 50px 0px;
   .date-to-string {
     margin: 25px;
@@ -33,7 +34,11 @@
   }
 }
 
-.usr-contact {
+.usr-contact,
+.login-forms {
+  h2 {
+    padding: 10px;
+  }
   div {
     display: flex;
     flex-direction: column;
@@ -58,7 +63,8 @@
 }
 
 @media only screen and (max-width: 749px) {
-  .poppop {
+  .poppop,
+  .login-poppop {
     width: 60vw;
     height: 60vh;
     max-height: 320px;
@@ -71,9 +77,9 @@
   .popper-btns-wrapper {
     display: flex;
     flex-direction: column;
-    .morning {
-    }
-    .afternoon {
-    }
+    // .morning {
+    // }
+    // .afternoon {
+    // }
   }
 }
