@@ -1,8 +1,8 @@
+.about-content-page-wrapper,
 .content-page-wrapper {
-  width: 100vw;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 100px;
+  grid-template-columns: 2fr 1fr;
+  padding: 50px 100px;
 
   .contact-bullet-points {
     display: grid;
@@ -20,6 +20,17 @@
       }
     }
   }
+  img {
+    margin: 0px 50px;
+    width: 60%;
+  }
+}
+
+.content-page-wrapper {
+  grid-template-columns: 1fr 2fr;
+  img {
+    padding-left: 100px;
+  }
 }
 
 .admin {
@@ -34,6 +45,44 @@
     .session-scheduled {
       font-size: 1.5rem;
       padding: 50px 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 749px) {
+  .about-content-page-wrapper,
+  .content-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 100px;
+
+    .contact-bullet-points {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 21px;
+
+      .bullet-point-group {
+        display: flex;
+        align-items: center;
+
+        .text {
+          font-size: 1.5em;
+          font-weight: 900;
+          margin-left: 21px;
+        }
+      }
+    }
+    img {
+      margin: 0px 0px 50px 0px;
+      width: 100%;
+    }
+  }
+
+  .content-page-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    img {
+      padding-left: 0px;
     }
   }
 }

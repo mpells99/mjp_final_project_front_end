@@ -1,4 +1,5 @@
 import React from "react";
+import contactImg from "../imgs/contact-photographer.jpg";
 
 export default function () {
   return (
@@ -16,6 +17,7 @@ export default function () {
           <div className="text">UT</div>
         </div>
       </div>
+      <img src={contactImg} />
     </div>
   );
 }
